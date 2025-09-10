@@ -14,8 +14,8 @@
 #include <cstring>
 #include <omp.h>
 
-const int WARMUP = 100;
-const int RUNS = 1000;
+const int WARMUP = 10;
+const int RUNS = 100;
 const float ERR = 0.05;
 double FLOPs;
 

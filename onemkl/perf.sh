@@ -7,6 +7,8 @@ if [ "$#" -ne 4 ]; then
     exit 1
 fi
 
+./settings.sh
+
 # Assign arguments to variables
 M=$1
 K=$2

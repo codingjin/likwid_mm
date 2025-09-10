@@ -6,6 +6,8 @@ if [ "$#" -ne 4 ]; then
     exit 1
 fi
 
+./settings.sh
+
 # Assign arguments to variables
 M=$1
 K=$2
@@ -22,13 +24,13 @@ rm -f "$REPORT"
 make
 # Warmup rounds
 echo "Warming up ..."
-for ((i=0; i<3; i++)); do
+for ((i=0; i<2; i++)); do
     likwid-powermeter ./onemkl_sgemm "$M" "$K" "$N" "$THREADS" >/dev/null
 done
 
 # Main measurement
 echo "Start ..."
-for ((i=0; i<100; i++)); do
+for ((i=0; i<20; i++)); do
     likwid-powermeter ./onemkl_sgemm "$M" "$K" "$N" "$THREADS" 2>&1 | tee -a "$REPORT"
 done
 
