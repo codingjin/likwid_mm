@@ -15,5 +15,6 @@ K=$2
 N=$3
 THREADS=$4
 
+make
 # Run the program, display output and append to perf.report
 ./openblas_sgemm_perf "$M" "$K" "$N" "$THREADS" 2>&1 | tee perf.report

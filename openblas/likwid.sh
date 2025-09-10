@@ -20,6 +20,7 @@ if [ -f "$REPORT" ]; then
 fi
 rm -f "$REPORT"
 
+make
 # Warmup rounds
 echo "Warming up ..."
 for ((i=0; i<3; i++)); do
